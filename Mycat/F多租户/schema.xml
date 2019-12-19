@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://io.mycat/">
+    <!--多租户模式-->
+    <schema name="deeplink_1000011" checkSQLschema="false" sqlMaxLimit="100">
+        <table name="tb_hit" primaryKey="id" autoIncrement="true" dataNode="dn001"/>
+        <table name="log_sync" primaryKey="id" autoIncrement="true" dataNode="dn001"/>
+        <table name="tb_device" primaryKey="id" autoIncrement="true" subTables="tb_device_$1-3" dataNode="dn001" rule="auto-sharding-long"/>
+    </schema>
+
+    <schema name="deeplink_1000012" checkSQLschema="false" sqlMaxLimit="100">
+        <table name="tb_hit" primaryKey="id" autoIncrement="true" dataNode="dn002"/>
+        <table name="log_sync" primaryKey="id" autoIncrement="true" dataNode="dn002"/>
+        <table name="tb_device" primaryKey="id" autoIncrement="true" subTables="tb_device_$1-3" dataNode="dn002" rule="auto-sharding-long"/>
+    </schema>
+
+    <schema name="deeplink_1000013" checkSQLschema="false" sqlMaxLimit="100">
+        <table name="tb_hit" primaryKey="id" autoIncrement="true" dataNode="dn003"/>
+        <table name="log_sync" primaryKey="id" autoIncrement="true" dataNode="dn003"/>
+        <table name="tb_device" primaryKey="id" autoIncrement="true" subTables="tb_device_$1-3" dataNode="dn003" rule="auto-sharding-long"/>
+    </schema>
+
+    <!--物理库-->
+    <dataNode name="dn001" dataHost="dh001" database="deeplink_1000011"/>
+    <dataNode name="dn002" dataHost="dh001" database="deeplink_1000012"/>
+    <dataNode name="dn003" dataHost="dh001" database="deeplink_1000013"/>
+
+
+    <dataHost name="dh001" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1" slaveThreshold="100">
+        <heartbeat>select user()</heartbeat>
+        <writeHost host="hostM1" url="localhost:3306" user="root" password="123456">
+            <readHost host="hostS1" url="localhost:3306" user="root" password="123456"/>
+        </writeHost>
+    </dataHost>
+</mycat:schema>

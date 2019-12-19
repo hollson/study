@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mycat:rule SYSTEM "rule.dtd">
+<mycat:rule xmlns:mycat="http://io.mycat/">
+    <tableRule name="sharding-by-intfile">
+        <rule>
+            <columns>age</columns>
+            <algorithm>hash-int</algorithm>
+        </rule>
+    </tableRule>
+    <function name="hash-int" class="io.mycat.route.function.PartitionByFileMap">
+        <property name="mapFile">partition-hash-int.txt</property>
+        <property name="type">0</property>
+        <property name="defaultNode">0</property>
+    </function>
+</mycat:rule>

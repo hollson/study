@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://io.mycat/">
+    <schema name="luckcat" checkSQLschema="false" sqlMaxLimit="100">
+        <table name="sharding_by_date_hash" primaryKey="id" dataNode="dn$0-10" rule="sharding-by-range-date-hash" />
+    </schema>
+    <dataNode name="dn0" dataHost="dh-1" database="db0"/>
+    <dataNode name="dn1" dataHost="dh-1" database="db1"/>
+    <dataNode name="dn2" dataHost="dh-1" database="db2"/>
+    <dataNode name="dn3" dataHost="dh-1" database="db3"/>
+    <dataNode name="dn4" dataHost="dh-1" database="db4"/>
+    <dataNode name="dn5" dataHost="dh-1" database="db5"/>
+    <dataNode name="dn6" dataHost="dh-1" database="db6"/>
+    <dataNode name="dn7" dataHost="dh-1" database="db7"/>
+    <dataNode name="dn8" dataHost="dh-1" database="db8"/>
+    <dataNode name="dn9" dataHost="dh-1" database="db9"/>
+    <dataNode name="dn10" dataHost="dh-1" database="db10"/>
+    <dataHost name="dh-1" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+        <heartbeat>select user()</heartbeat>
+        <writeHost host="hostM1" url="localhost:3306" user="root" password="123456">
+        </writeHost>
+    </dataHost>
+</mycat:schema>

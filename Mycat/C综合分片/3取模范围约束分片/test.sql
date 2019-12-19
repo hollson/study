@@ -1,0 +1,12 @@
+CREATE TABLE sharding_by_pattern (id varchar(20) null,`db_nm`  varchar(20) NULL);  
+INSERT INTO `sharding_by_pattern` (id,db_nm) VALUES (1000, database());  
+INSERT INTO `sharding_by_pattern` (id,db_nm) VALUES (1002, database());  
+INSERT INTO `sharding_by_pattern` (id,db_nm) VALUES (30000, database());  
+INSERT INTO `sharding_by_pattern` (id,db_nm) VALUES (30004, database());  
+INSERT INTO `sharding_by_pattern` (id,db_nm) VALUES (40000, database());  
+INSERT INTO `sharding_by_pattern` (id,db_nm) VALUES (40005, database());  
+INSERT INTO `sharding_by_pattern` (id,db_nm) VALUES (60005, database());  
+INSERT INTO `sharding_by_pattern` (id,db_nm) VALUES (60006, database());  
+INSERT INTO `sharding_by_pattern` (id,db_nm) VALUES (80006, database());  
+INSERT INTO `sharding_by_pattern` (id,db_nm) VALUES ("abcd0", database());  
+select * from sharding_by_pattern;  

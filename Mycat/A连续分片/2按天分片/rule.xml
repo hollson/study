@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mycat:rule SYSTEM "rule.dtd">
+<mycat:rule xmlns:mycat="http://io.mycat/">
+    <tableRule name="sharding-by-day">
+        <rule>
+            <columns>create_time</columns>
+            <algorithm>part-by-day</algorithm>
+        </rule>
+    </tableRule>
+    <function name="part-by-day"
+              class="io.mycat.route.function.PartitionByDate">
+        <property name="dateFormat">yyyy-MM-dd</property>
+        <property name="sBeginDate">2017-10-01</property>
+        <!--默认从开始日期算起，每隔10天一个分区。-->
+        <property name="sPartionDay">10</property>
+    </function>
+</mycat:rule>

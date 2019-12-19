@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mycat:server SYSTEM "server.dtd">
+<mycat:server xmlns:mycat="http://io.mycat/">
+    <system>
+        <!--三种自增方式：0.本地文件方式、1.数据库方式、2.本地时间戳算法。-->
+        <property name="sequnceHandlerType">0</property>
+    </system>
+    <user name="root" defaultAccount="true">
+        <property name="password">123456</property>
+        <property name="schemas">luckcat</property>
+    </user>
+</mycat:server>

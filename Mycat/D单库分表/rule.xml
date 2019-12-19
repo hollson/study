@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mycat:rule SYSTEM "rule.dtd">
+<mycat:rule xmlns:mycat="http://io.mycat/">
+    <!--取模分片-->
+    <tableRule name="sharding-mod-long">
+        <rule>
+            <columns>id</columns>
+            <algorithm>mod-long</algorithm>
+        </rule>
+    </tableRule>
+    <function name="mod-long" class="io.mycat.route.function.PartitionByMod">
+        <property name="count">3</property>
+    </function>
+
+
+    <!--连续分片-->
+<!--    <tableRule name="auto-sharding-long">-->
+<!--        <rule>-->
+<!--            <columns>id</columns> &lt;!&ndash;分表字段&ndash;&gt;-->
+<!--            <algorithm>rang-long</algorithm> &lt;!&ndash;算法&ndash;&gt;-->
+<!--        </rule>-->
+<!--    </tableRule>-->
+<!--    <function name="rang-long" class="io.mycat.route.function.AutoPartitionByLong">-->
+<!--        <property name="mapFile">autopartition-long.txt</property>-->
+<!--        <property name="defaultNode">0</property>-->
+<!--    </function>-->
+</mycat:rule>

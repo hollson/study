@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mycat:rule SYSTEM "rule.dtd">
+<mycat:rule xmlns:mycat="http://io.mycat/">
+    <tableRule name="sharding-by-month">
+        <rule>
+            <columns>create_time</columns>
+            <algorithm>sharding-by-month</algorithm>
+        </rule>
+    </tableRule>
+    <function name="sharding-by-month" class="io.mycat.route.function.PartitionByMonth">
+        <property name="dateFormat">yyyy-MM-dd</property>
+        <property name="sBeginDate">2017-10-01</property>
+        <property name="sEndDate">2017-12-30</property>
+    </function>
+</mycat:rule>

@@ -1,0 +1,102 @@
+
+
+[31m2019/10/04 14:35:16 [Recovery] 2019/10/04 - 14:35:16 panic recovered:
+GET /log HTTP/1.1
+Host: 127.0.0.1:8080
+Accept: */*
+User-Agent: curl/7.54.0
+
+
+middleware test
+/Users/sybs/work/Ginpro/3.中间件/loging.go:20 (0x158d860)
+	main.func1: panic("middleware test")
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/context.go:124 (0x15785b9)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/recovery.go:83 (0x158b889)
+	RecoveryWithWriter.func1: c.Next()
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/context.go:124 (0x15785b9)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/logger.go:240 (0x158a930)
+	LoggerWithConfig.func1: c.Next()
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/context.go:124 (0x15785b9)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/gin.go:389 (0x1581dd1)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/gin.go:351 (0x1581603)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/Cellar/go/1.12.9/libexec/src/net/http/server.go:2774 (0x12b4947)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/Cellar/go/1.12.9/libexec/src/net/http/server.go:1878 (0x12b0530)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/Cellar/go/1.12.9/libexec/src/runtime/asm_amd64.s:1337 (0x1059c50)
+	goexit: BYTE	$0x90	// NOP
+[0m
+[GIN] 2019/10/04 - 14:35:16 | 500 |    1.086833ms |       127.0.0.1 | GET      /log
+
+
+[31m2019/10/04 14:35:31 [Recovery] 2019/10/04 - 14:35:31 panic recovered:
+GET /log HTTP/1.1
+Host: 127.0.0.1:8080
+Accept: */*
+User-Agent: curl/7.54.0
+
+
+middleware test
+/Users/sybs/work/Ginpro/3.中间件/loging.go:20 (0x158d860)
+	main.func1: panic("middleware test")
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/context.go:124 (0x15785b9)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/recovery.go:83 (0x158b889)
+	RecoveryWithWriter.func1: c.Next()
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/context.go:124 (0x15785b9)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/logger.go:240 (0x158a930)
+	LoggerWithConfig.func1: c.Next()
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/context.go:124 (0x15785b9)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/gin.go:389 (0x1581dd1)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/gin.go:351 (0x1581603)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/Cellar/go/1.12.9/libexec/src/net/http/server.go:2774 (0x12b4947)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/Cellar/go/1.12.9/libexec/src/net/http/server.go:1878 (0x12b0530)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/Cellar/go/1.12.9/libexec/src/runtime/asm_amd64.s:1337 (0x1059c50)
+	goexit: BYTE	$0x90	// NOP
+[0m
+[GIN] 2019/10/04 - 14:35:31 | 500 |     999.216µs |       127.0.0.1 | GET      /log
+
+
+[31m2019/10/04 14:35:32 [Recovery] 2019/10/04 - 14:35:32 panic recovered:
+GET /log HTTP/1.1
+Host: 127.0.0.1:8080
+Accept: */*
+User-Agent: curl/7.54.0
+
+
+middleware test
+/Users/sybs/work/Ginpro/3.中间件/loging.go:20 (0x158d860)
+	main.func1: panic("middleware test")
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/context.go:124 (0x15785b9)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/recovery.go:83 (0x158b889)
+	RecoveryWithWriter.func1: c.Next()
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/context.go:124 (0x15785b9)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/logger.go:240 (0x158a930)
+	LoggerWithConfig.func1: c.Next()
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/context.go:124 (0x15785b9)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/gin.go:389 (0x1581dd1)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/sybs/go/pkg/mod/github.com/gin-gonic/gin@v1.4.0/gin.go:351 (0x1581603)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/Cellar/go/1.12.9/libexec/src/net/http/server.go:2774 (0x12b4947)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/Cellar/go/1.12.9/libexec/src/net/http/server.go:1878 (0x12b0530)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/Cellar/go/1.12.9/libexec/src/runtime/asm_amd64.s:1337 (0x1059c50)
+	goexit: BYTE	$0x90	// NOP
+[0m
+[GIN] 2019/10/04 - 14:35:32 | 500 |    1.616082ms |       127.0.0.1 | GET      /log

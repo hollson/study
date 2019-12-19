@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://io.mycat/">
+    <schema name="luckcat" checkSQLschema="false" sqlMaxLimit="100">
+        <!--schema.xml-->
+        <table name="sharding_by_day" primaryKey="id" dataNode="dn$0-2" rule="sharding-by-day" />
+    </schema>
+</mycat:schema>

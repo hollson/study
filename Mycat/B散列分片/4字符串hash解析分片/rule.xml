@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mycat:rule SYSTEM "rule.dtd">
+<mycat:rule xmlns:mycat="http://io.mycat/">
+    <tableRule name="sharding-by-stringhash">
+        <rule>
+            <columns>ord_no</columns>
+            <algorithm>sharding-by-stringhash</algorithm>
+        </rule>
+    </tableRule>
+    <function name="sharding-by-stringhash" class="io.mycat.route.function.PartitionByString">
+        <property name="partitionLength">512</property>
+        <property name="partitionCount">2</property>
+        <property name="hashSlice">-6:0</property>
+    </function>
+</mycat:rule>
+
+        <!-- 配置说明：-->
+        <!-- * columns标识将要分片的表字段。-->
+        <!-- * algorithm为分片函数。-->
+        <!-- * partitionLength为字符串hash的求模基数。-->
+        <!-- * partitionCount为分区数。其中partitionLength*partitionCount=1024-->
+        <!-- * hashSlice为预算位，即根据子字符串中的int值进行hash运算。-->
+        <!-- 0 代表 str.length(), -1 代表 str.length()-1，大于0只代表数字自身-->
+        <!-- 可以理解为substring（start，end），start为0则只表示0-->
+        <!-- 例1：值“45abc”，hash预算位0:2 ，取其中45进行计算-->
+        <!-- 例2：值“aaaabbb2345”，hash预算位-4:0 ，取其中2345进行计算-->

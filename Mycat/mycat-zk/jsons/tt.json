@@ -1,0 +1,17 @@
+[
+  {
+    "name": "rang-long",
+    "clazz": "io.mycat.route.function.AutoPartitionByLong",
+    "property": [
+      {
+        "value": "autopartition-long.txt",
+        "name": "mapFile"
+      },
+      {
+        "value": "# range start-end ,data node index \r\n # K\u003d1000,M\u003d10000.\r\n0-500M\u003d0\r\n500M-1000M\u003d1\r\n1000M-1500M\u003d2\r\n1500M-2000M\u003d3\r\n2000M-2500M\u003d4\r\n2500M-3000M\u003d5\r\n3000M-3500M\u003d6\r\n3500M-4000M\u003d7\r\n4000M-4500M\u003d8\r\n4500M-5000M\u003d9",
+        "name": "autopartition-long.txt"
+      }
+    ]
+  }
+]
+

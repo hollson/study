@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mycat:rule SYSTEM "rule.dtd">
+<mycat:rule xmlns:mycat="http://io.mycat/">
+    <tableRule name="sharding-by-rang-mod">
+        <rule>
+            <columns>id</columns>
+            <algorithm>sharding-by-rang-mod</algorithm>
+        </rule>
+    </tableRule>
+    <function name="sharding-by-rang-mod" class="io.mycat.route.function.PartitionByRangeMod">
+        <!--指定分片规则的配置文件-->
+        <property name="mapFile">partition-range-mod.txt</property>
+        <!--未包含以上规则的数据存储节点，节点从0开始。-->
+        <property name="defaultNode">0</property>
+    </function>
+</mycat:rule>

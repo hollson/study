@@ -1,0 +1,298 @@
+
+[
+  {
+    "name": "deeplink",
+    "checkSQLschema": "false",
+    "sqlMaxLimit": "100",
+    "table": [
+      {
+        "name": "tb_hit",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn010"
+      },
+      {
+        "name": "log_sync",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn010"
+      },
+      {
+        "name": "tb_device",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn010"
+      }
+    ]
+  },
+  {
+    "name": "DEEPLINK_1000011",
+    "checkSQLschema": "false",
+    "sqlMaxLimit": "100",
+    "table": [
+      {
+        "name": "tb_hit",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn011"
+      },
+      {
+        "name": "log_sync",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn011"
+      },
+      {
+        "name": "tb_device",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "subTables": "tb_device_$1-10",
+        "dataNode": "dn011",
+        "rule": "autoshardinglong"
+      }
+    ]
+  },
+  {
+    "name": "DEEPLINK_1000012",
+    "checkSQLschema": "false",
+    "sqlMaxLimit": "100",
+    "table": [
+      {
+        "name": "tb_hit",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn012"
+      },
+      {
+        "name": "log_sync",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn012"
+      },
+      {
+        "name": "tb_device",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "subTables": "tb_device_$1-10",
+        "dataNode": "dn012",
+        "rule": "autoshardinglong"
+      }
+    ]
+  },
+  {
+    "name": "DEEPLINK_1000013",
+    "checkSQLschema": "false",
+    "sqlMaxLimit": "100",
+    "table": [
+      {
+        "name": "tb_hit",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn013"
+      },
+      {
+        "name": "log_sync",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn013"
+      },
+      {
+        "name": "tb_device",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "subTables": "tb_device_$1-10",
+        "dataNode": "dn013",
+        "rule": "autoshardinglong"
+      }
+    ]
+  },
+  {
+    "name": "DEEPLINK_1000014",
+    "checkSQLschema": "false",
+    "sqlMaxLimit": "100",
+    "table": [
+      {
+        "name": "tb_hit",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn014"
+      },
+      {
+        "name": "log_sync",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn014"
+      },
+      {
+        "name": "tb_device",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "subTables": "tb_device_$1-10",
+        "dataNode": "dn014",
+        "rule": "autoshardinglong"
+      }
+    ]
+  },
+  {
+    "name": "DEEPLINK_1000015",
+    "checkSQLschema": "false",
+    "sqlMaxLimit": "100",
+    "table": [
+      {
+        "name": "tb_hit",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn015"
+      },
+      {
+        "name": "log_sync",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn015"
+      },
+      {
+        "name": "tb_device",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "subTables": "tb_device_$1-10",
+        "dataNode": "dn015",
+        "rule": "autoshardinglong"
+      }
+    ]
+  },
+  {
+    "name": "DEEPLINK_1000016",
+    "checkSQLschema": "false",
+    "sqlMaxLimit": "100",
+    "table": [
+      {
+        "name": "tb_hit",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn016"
+      },
+      {
+        "name": "log_sync",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn016"
+      },
+      {
+        "name": "tb_device",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "subTables": "tb_device_$1-10",
+        "dataNode": "dn016",
+        "rule": "autoshardinglong"
+      }
+    ]
+  },
+  {
+    "name": "DEEPLINK_1000017",
+    "checkSQLschema": "false",
+    "sqlMaxLimit": "100",
+    "table": [
+      {
+        "name": "tb_hit",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn017"
+      },
+      {
+        "name": "log_sync",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn017"
+      },
+      {
+        "name": "tb_device",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "subTables": "tb_device_$1-10",
+        "dataNode": "dn017",
+        "rule": "autoshardinglong"
+      }
+    ]
+  },
+  {
+    "name": "DEEPLINK_1000018",
+    "checkSQLschema": "false",
+    "sqlMaxLimit": "100",
+    "table": [
+      {
+        "name": "tb_hit",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn018"
+      },
+      {
+        "name": "log_sync",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn018"
+      },
+      {
+        "name": "tb_device",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "subTables": "tb_device_$1-10",
+        "dataNode": "dn018",
+        "rule": "autoshardinglong"
+      }
+    ]
+  },
+  {
+    "name": "DEEPLINK_1000019",
+    "checkSQLschema": "false",
+    "sqlMaxLimit": "100",
+    "table": [
+      {
+        "name": "tb_hit",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn019"
+      },
+      {
+        "name": "log_sync",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn019"
+      },
+      {
+        "name": "tb_device",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "subTables": "tb_device_$1-10",
+        "dataNode": "dn019",
+        "rule": "autoshardinglong"
+      }
+    ]
+  },
+  {
+    "name": "DEEPLINK_1000020",
+    "checkSQLschema": "false",
+    "sqlMaxLimit": "100",
+    "table": [
+      {
+        "name": "tb_hit",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn020"
+      },
+      {
+        "name": "log_sync",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "dataNode": "dn020"
+      },
+      {
+        "name": "tb_device",
+        "primaryKey": "id",
+        "autoIncrement": "true",
+        "subTables": "tb_device_$1-10",
+        "dataNode": "dn020",
+        "rule": "autoshardinglong"
+      }
+    ]
+  }
+]

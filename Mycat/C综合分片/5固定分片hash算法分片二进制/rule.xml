@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mycat:rule SYSTEM "rule.dtd">
+<mycat:rule xmlns:mycat="http://io.mycat/">
+    <tableRule name="sharding-by-long">
+        <rule>
+            <columns>id</columns>
+            <algorithm>sharding-by-long</algorithm>
+        </rule>
+    </tableRule>
+    <function name="sharding-by-long" class="io.mycat.route.function.PartitionByLong">
+        <property name="partitionCount">2,1</property>
+        <property name="partitionLength">256,512</property>
+    </function>
+</mycat:rule>
+
+<!--        配置说明：-->
+<!--        * partitionCount为指定分片个数列表。-->
+<!--        * partitionLength为分片范围列表。-->
+<!--        分区长度:默认为最大2^n=1024 ,即最大支持1024分区-->
+
+<!--        约束 :-->
+<!--        count,length两个数组的长度必须是一致的。-->
+<!--        1024 = sum((count[i]*length[i])). count和length两个向量的点积恒等于1024-->
+<!--        本例的分区策略：希望将数据水平分成3份，前两份各占25%，第三份占50%。（故本例非均匀分区）-->
+<!--        // |<———————1024———————————>|-->
+<!--        // |<—-256—>|<—-256—>|<———-512————->|-->
+<!--        // | partition0 | partition1 | partition2 |-->
+<!--        // | 共2份,故count[0]=2 | 共1份，故count[1]=1 |-->
+<!--        int[] count = new int[] { 2, 1 };-->
+<!--        int[] length = new int[] { 256, 512 };-->

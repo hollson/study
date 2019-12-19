@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mycat:rule SYSTEM "rule.dtd">
+<mycat:rule xmlns:mycat="http://io.mycat/">
+    <tableRule name="sharding-by-pattern">
+        <rule>
+            <columns>id</columns>
+            <algorithm>sharding-by-pattern</algorithm>
+        </rule>
+    </tableRule>
+    <function name="sharding-by-pattern" class="io.mycat.route.function.PartitionByPattern">
+        <property name="mapFile">partition-pattern.txt</property>
+        <property name="defaultNode">0</property>
+        <property name="patternValue">256</property>
+    </function>
+</mycat:rule>
+
+<!--        配置说明：-->
+<!--        * 1-32即代表id%256后分布的范围，如果在1-32则分区在0，其他类推。-->
+<!--        * 如果id非数字，则会分配在defaultNode默认节点。-->

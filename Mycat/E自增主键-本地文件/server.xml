@@ -1,0 +1,5 @@
+<!--三种自增方式：0.本地文件方式、1.数据库方式、2.本地时间戳算法。-->
+<system>
+    <!--修改为本地文件方式-->
+    <property name="sequnceHandlerType">0</property>
+</system>

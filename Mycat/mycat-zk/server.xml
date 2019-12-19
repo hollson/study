@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mycat:server SYSTEM "server.dtd">
+<mycat:server xmlns:mycat="http://io.mycat/">
+    <system>
+        <!--三种自增方式：0.本地文件方式、1.数据库方式、2.本地时间戳算法。-->
+        <property name="sequnceHandlerType">1</property>
+
+        <!--超市时间(秒)，默认5分钟-->
+        <property name="sqlExecuteTimeout">1800</property>
+
+        <!--使用非堆内存。否则内存会爆掉-->
+        <property name="useOffHeapForMerge">1</property>
+    </system>
+    <user name="root" defaultAccount="true">
+        <property name="password">Yunke@2019.com</property>
+        <property name="schemas">
+            <!--逻辑数据库名，大小写敏感-->
+            deeplink,DEEPLINK_1000011,DEEPLINK_1000012,DEEPLINK_1000013,DEEPLINK_1000014,DEEPLINK_1000015,DEEPLINK_1000016,DEEPLINK_1000017,DEEPLINK_1000018,DEEPLINK_1000019,DEEPLINK_1000020
+        </property>
+    </user>
+    <user name="work" defaultAccount="false">
+        <property name="password">Yunke@123.com</property>
+        <property name="schemas">
+            deeplink,DEEPLINK_1000011,DEEPLINK_1000012,DEEPLINK_1000013,DEEPLINK_1000014,DEEPLINK_1000015,DEEPLINK_1000016,DEEPLINK_1000017,DEEPLINK_1000018,DEEPLINK_1000019,DEEPLINK_1000020
+        </property>
+        <!-- <property name="readOnly">true</property>-->
+    </user>
+</mycat:server>

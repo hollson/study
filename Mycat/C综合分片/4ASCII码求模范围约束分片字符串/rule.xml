@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mycat:rule SYSTEM "rule.dtd">
+<mycat:rule xmlns:mycat="http://io.mycat/">
+    <tableRule name="partition-by-ascii">
+        <rule>
+            <columns>id</columns>
+            <algorithm>sharding-by-pattern-ascii</algorithm>
+        </rule>
+    </tableRule>
+    <function name="sharding-by-pattern-ascii" class="io.mycat.route.function.PartitionByPrefixPattern">
+        <property name="mapFile">partition-pattern-ascii.txt</property>
+        <property name="patternValue">256</property>
+        <property name="prefixLength">5</property>
+    </function>
+</mycat:rule>

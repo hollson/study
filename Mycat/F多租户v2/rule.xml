@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mycat:rule SYSTEM "rule.dtd">
+<mycat:rule xmlns:mycat="http://io.mycat/">
+    <!--连续分片-->
+    <tableRule name="auto-sharding-long">
+        <rule>
+            <!--分表字段-->
+            <columns>id</columns>
+            <!--算法-->
+            <algorithm>rang-long</algorithm>
+        </rule>
+    </tableRule>
+    <function name="rang-long" class="io.mycat.route.function.AutoPartitionByLong">
+        <property name="mapFile">autopartition-long.txt</property>
+        <property name="defaultNode">0</property>
+    </function>
+</mycat:rule>

@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://io.mycat/">
+    <!-- ##################################逻辑库：多租户模式 ################################## -->
+    <schema name="deeplink" checkSQLschema="false" sqlMaxLimit="100">
+        <table name="tb_hit" primaryKey="id" autoIncrement="true" dataNode="dn010"/>
+        <table name="log_sync" primaryKey="id" autoIncrement="true" dataNode="dn010"/>
+        <table name="tb_device" primaryKey="id" autoIncrement="true" dataNode="dn010"/>
+    </schema>
+
+    <schema name="DEEPLINK_1000011" checkSQLschema="false" sqlMaxLimit="100">
+        <table name="tb_hit" primaryKey="id" autoIncrement="true" dataNode="dn011"/>
+        <table name="log_sync" primaryKey="id" autoIncrement="true" dataNode="dn011"/>
+        <!--tb_device_$1-N：使用变量设置分表变量
+        1. 当前变量树、实际创建的切分表个数和autopartition-long.txt的分片范围数量须相等
+        -->
+        <table name="tb_device" primaryKey="id" autoIncrement="true" subTables="tb_device_$1-10" dataNode="dn011"
+               rule="auto-sharding-long"/>
+    </schema>
+
+    <schema name="DEEPLINK_1000012" checkSQLschema="false" sqlMaxLimit="100">
+        <table name="tb_hit" primaryKey="id" autoIncrement="true" dataNode="dn012"/>
+        <table name="log_sync" primaryKey="id" autoIncrement="true" dataNode="dn012"/>
+        <table name="tb_device" primaryKey="id" autoIncrement="true" subTables="tb_device_$1-10" dataNode="dn012"
+               rule="auto-sharding-long"/>
+    </schema>
+
+    <schema name="DEEPLINK_1000013" checkSQLschema="false" sqlMaxLimit="100">
+        <table name="tb_hit" primaryKey="id" autoIncrement="true" dataNode="dn013"/>
+        <table name="log_sync" primaryKey="id" autoIncrement="true" dataNode="dn013"/>
+        <table name="tb_device" primaryKey="id" autoIncrement="true" subTables="tb_device_$1-10" dataNode="dn013"
+               rule="auto-sharding-long"/>
+    </schema>
+
+    <schema name="DEEPLINK_1000014" checkSQLschema="false" sqlMaxLimit="100">
+        <table name="tb_hit" primaryKey="id" autoIncrement="true" dataNode="dn014"/>
+        <table name="log_sync" primaryKey="id" autoIncrement="true" dataNode="dn014"/>
+        <table name="tb_device" primaryKey="id" autoIncrement="true" subTables="tb_device_$1-10" dataNode="dn014"
+               rule="auto-sharding-long"/>
+    </schema>
+
+    <schema name="DEEPLINK_1000015" checkSQLschema="false" sqlMaxLimit="100">
+        <table name="tb_hit" primaryKey="id" autoIncrement="true" dataNode="dn015"/>
+        <table name="log_sync" primaryKey="id" autoIncrement="true" dataNode="dn015"/>
+        <table name="tb_device" primaryKey="id" autoIncrement="true" subTables="tb_device_$1-10" dataNode="dn015"
+               rule="auto-sharding-long"/>
+    </schema>
+
+    <schema name="DEEPLINK_1000016" checkSQLschema="false" sqlMaxLimit="100">
+        <table name="tb_hit" primaryKey="id" autoIncrement="true" dataNode="dn016"/>
+        <table name="log_sync" primaryKey="id" autoIncrement="true" dataNode="dn016"/>
+        <table name="tb_device" primaryKey="id" autoIncrement="true" subTables="tb_device_$1-10" dataNode="dn016"
+               rule="auto-sharding-long"/>
+    </schema>
+
+    <schema name="DEEPLINK_1000017" checkSQLschema="false" sqlMaxLimit="100">
+        <table name="tb_hit" primaryKey="id" autoIncrement="true" dataNode="dn017"/>
+        <table name="log_sync" primaryKey="id" autoIncrement="true" dataNode="dn017"/>
+        <table name="tb_device" primaryKey="id" autoIncrement="true" subTables="tb_device_$1-10" dataNode="dn017"
+               rule="auto-sharding-long"/>
+    </schema>
+
+    <schema name="DEEPLINK_1000018" checkSQLschema="false" sqlMaxLimit="100">
+        <table name="tb_hit" primaryKey="id" autoIncrement="true" dataNode="dn018"/>
+        <table name="log_sync" primaryKey="id" autoIncrement="true" dataNode="dn018"/>
+        <table name="tb_device" primaryKey="id" autoIncrement="true" subTables="tb_device_$1-10" dataNode="dn018"
+               rule="auto-sharding-long"/>
+    </schema>
+
+    <schema name="DEEPLINK_1000019" checkSQLschema="false" sqlMaxLimit="100">
+        <table name="tb_hit" primaryKey="id" autoIncrement="true" dataNode="dn019"/>
+        <table name="log_sync" primaryKey="id" autoIncrement="true" dataNode="dn019"/>
+        <table name="tb_device" primaryKey="id" autoIncrement="true" subTables="tb_device_$1-10" dataNode="dn019"
+               rule="auto-sharding-long"/>
+    </schema>
+
+    <schema name="DEEPLINK_1000020" checkSQLschema="false" sqlMaxLimit="100">
+        <table name="tb_hit" primaryKey="id" autoIncrement="true" dataNode="dn020"/>
+        <table name="log_sync" primaryKey="id" autoIncrement="true" dataNode="dn020"/>
+        <table name="tb_device" primaryKey="id" autoIncrement="true" subTables="tb_device_$1-10" dataNode="dn020"
+               rule="auto-sharding-long"/>
+    </schema>
+
+    <!-- ################################## 数据节点：指向实际物理数据库 ################################## -->
+    <dataNode name="dn010" dataHost="dh001" database="deeplink"/>
+    <dataNode name="dn011" dataHost="dh001" database="deeplink_1000011"/>
+    <dataNode name="dn012" dataHost="dh001" database="deeplink_1000012"/>
+    <dataNode name="dn013" dataHost="dh001" database="deeplink_1000013"/>
+    <dataNode name="dn014" dataHost="dh001" database="deeplink_1000014"/>
+    <dataNode name="dn015" dataHost="dh001" database="deeplink_1000015"/>
+    <dataNode name="dn016" dataHost="dh001" database="deeplink_1000016"/>
+    <dataNode name="dn017" dataHost="dh001" database="deeplink_1000017"/>
+    <dataNode name="dn018" dataHost="dh001" database="deeplink_1000018"/>
+    <dataNode name="dn019" dataHost="dh001" database="deeplink_1000019"/>
+    <dataNode name="dn020" dataHost="dh001" database="deeplink_1000020"/>
+
+    <!-- ################################## 物理主机：指向主从等服务器 ################################## -->
+    <dataHost name="dh001" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native"
+              switchType="1" slaveThreshold="100">
+        <heartbeat>select user()</heartbeat>
+        <writeHost host="hostM1" url="localhost:3306" user="root" password="123456">
+            <readHost host="hostS1" url="localhost:3306" user="root" password="123456"/>
+        </writeHost>
+    </dataHost>
+</mycat:schema>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mycat:rule SYSTEM "rule.dtd">
+<mycat:rule xmlns:mycat="http://io.mycat/">
+    <tableRule name="sharding-by-range-date-hash">
+        <rule>
+            <columns>create_time</columns>
+            <algorithm>sharding-by-range-date-hash</algorithm>
+        </rule>
+    </tableRule>
+    <function name="sharding-by-range-date-hash" class="io.mycat.route.function.PartitionByRangeDateHash">
+        <property name="dateFormat">yyyy-MM-dd HH:mm:ss</property>
+        <property name="sBeginDate">2018-01-31 00:00:00</property>
+        <property name="sPartionDay">30</property>
+        <property name="groupPartionSize">10</property>
+    </function>
+</mycat:rule>
+
+<!--        sPartionDay：代表多少天分一个分片；-->
+<!--        groupPartionSize：代表分片组的大小。-->

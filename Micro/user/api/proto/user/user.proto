@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package com.github.hollson.api.user;
+import "github.com/micro/go-micro/api/proto/api.proto";
+
+service User {
+    rpc Info(go.api.Request) returns (go.api.Response) {}
+    rpc GetUserByID (Request) returns (Response) {
+    }
+}
+
+// 请求
+message Request {
+    string uid = 1;
+}
+
+message UserInfo {
+    string uid = 1;
+    string name = 2;
+    string tel = 3;
+}
+
+message Error {
+    string msg = 1;
+    string info = 2;
+}
+
+// 响应
+message Response {
+    uint32 code = 1;
+    Error error = 2;
+    UserInfo data = 3;
+}

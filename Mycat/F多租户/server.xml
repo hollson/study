@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mycat:server SYSTEM "server.dtd">
+<mycat:server xmlns:mycat="http://io.mycat/">
+    <system>
+        <!--三种自增方式：0.本地文件方式、1.数据库方式、2.本地时间戳算法。-->
+        <property name="sequnceHandlerType">0</property>
+    </system>
+    <user name="root" defaultAccount="true">
+        <property name="password">Yunke@2019.com</property>
+        <property name="schemas">deeplink_1000011,deeplink_1000012,deeplink_1000013</property>
+    </user>
+    <user name="work" defaultAccount="false">
+        <property name="password">Yunke@123.com</property>
+        <property name="schemas">deeplink_1000011,deeplink_1000012,deeplink_1000013</property>
+        <property name="readOnly">true</property>
+    </user>
+</mycat:server>

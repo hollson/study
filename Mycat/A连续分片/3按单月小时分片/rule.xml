@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mycat:rule SYSTEM "rule.dtd">
+<mycat:rule xmlns:mycat="http://io.mycat/">
+    <tableRule name="sharding-by-hour">
+        <rule>
+            <columns>sharding_col</columns>
+            <algorithm>sharding-by-hour</algorithm>
+        </rule>
+    </tableRule>
+    <function name="sharding-by-hour" class="io.mycat.route.function.LatestMonthPartion">
+        <property name="splitOneDay">3</property>
+    </function>
+</mycat:rule>
