@@ -8,7 +8,6 @@ import (
 
 //https://blog.csdn.net/weixin_33733810/article/details/89063283
 //https://blog.csdn.net/htyu_0203_39/article/details/51523517
-
 func Future(f func() (interface{}, error)) func() (interface{}, error) {
 	var result interface{}
 	var err error
@@ -37,7 +36,6 @@ func main() {
 	})
 
 	// do many other things
-
 	b, err := future()
 	body, _ := b.([]byte)
 

@@ -20,7 +20,8 @@ func withTimeout() {
 		for {
 			time.Sleep(time.Second)
 			select {
-			case <-ctx.Done():
+			case er := <-ctx.Done():
+				fmt.Println(er) //取消的原因
 				break OVER
 			default:
 				fmt.Println("时间心跳：", time.Now().Second())
