@@ -13,14 +13,14 @@
         <property name="useOffHeapForMerge">1</property>
     </system>
     <user name="root" defaultAccount="true">
-        <property name="password">Yunke@2019.com</property>
+        <property name="password">123456.com</property>
         <property name="schemas">
             <!--逻辑数据库名，大小写敏感-->
             deeplink,DEEPLINK_1000011,DEEPLINK_1000012,DEEPLINK_1000013,DEEPLINK_1000014,DEEPLINK_1000015,DEEPLINK_1000016,DEEPLINK_1000017,DEEPLINK_1000018,DEEPLINK_1000019,DEEPLINK_1000020
         </property>
     </user>
     <user name="work" defaultAccount="false">
-        <property name="password">Yunke@123.com</property>
+        <property name="password">123456.com</property>
         <property name="schemas">
             deeplink,DEEPLINK_1000011,DEEPLINK_1000012,DEEPLINK_1000013,DEEPLINK_1000014,DEEPLINK_1000015,DEEPLINK_1000016,DEEPLINK_1000017,DEEPLINK_1000018,DEEPLINK_1000019,DEEPLINK_1000020
         </property>

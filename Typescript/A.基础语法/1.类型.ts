@@ -82,3 +82,9 @@ create(null); // OK
 let some: any = "this is a string";
 let len1: number = (<string>some).length;
 let len2: number = (some as string).length;
+
+
+
+
+
+
