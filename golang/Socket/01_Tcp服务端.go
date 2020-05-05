@@ -34,3 +34,7 @@ func main() {
 
 	fmt.Println(string(buf[:n]))
 }
+
+func foo(){
+
+}
