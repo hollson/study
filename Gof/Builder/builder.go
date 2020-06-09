@@ -19,13 +19,13 @@ type IBuilder interface {
 	foot()
 	hand()
 }
+
 type Thin struct {
 }
 
 func (t *Thin) head() {
 	fmt.Println("我的头很瘦")
 }
-
 func (t *Thin) body() {
 	fmt.Println("我的身体很瘦")
 }
@@ -36,13 +36,13 @@ func (t *Thin) hand() {
 	fmt.Println("我的身体手很瘦")
 }
 
+
 type Fat struct {
 }
 
 func (t *Fat) head() {
 	fmt.Println("我的头很胖")
 }
-
 func (t *Fat) body() {
 	fmt.Println("我的身体很胖")
 }
@@ -52,6 +52,7 @@ func (t *Fat) foot() {
 func (t *Fat) hand() {
 	fmt.Println("我的身体手很胖")
 }
+
 
 type Director struct {
 	person IBuilder

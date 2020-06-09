@@ -22,6 +22,7 @@ func main() {
 
 	//router.Use(BackList())
 	router.GET("/home",BackList(), AuthMiddleWare(), func(c *gin.Context) {
+		c.Request.Cookies()
 		c.JSON(http.StatusOK, gin.H{"data": "home"})
 	})
 	router.Run()

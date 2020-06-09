@@ -5,6 +5,17 @@ import (
 	"net"
 )
 
+// 代码模型
+////一个Listen服务可以监听多个链接，一个链接可以有多个循环读写
+//listen:=net.Listen("tcp",":8080") //创建监听
+//for{  							  //创建多个链接
+//	conn:=listen.Acception
+//	for{						  //循环读写
+//		//处理函数，一般作为协程，即go handler()
+//		buf:=make(byte[],1024)
+//		conn.read(buf)
+//	}
+//}
 
 //可以访问tcp或http服务
 func main() {
