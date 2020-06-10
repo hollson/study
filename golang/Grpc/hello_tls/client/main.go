@@ -9,11 +9,9 @@ import (
 	"google.golang.org/grpc/grpclog"
 )
 
-const (
-	// Address gRPC服务地址
-	Address = "127.0.0.1:50052"
-)
+const Address = "127.0.0.1:50052"
 
+// krəˈdenʃlz
 func main() {
 	// TLS连接
 	creds, err := credentials.NewClientTLSFromFile("../../keys/server.pem", "server name")

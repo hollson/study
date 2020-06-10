@@ -9,8 +9,8 @@ import (
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/credentials" // 引入grpc认证包
 	"google.golang.org/grpc/grpclog"
+	"google.golang.org/grpc/credentials" // 引入grpc认证包
 	"google.golang.org/grpc/metadata" // 引入grpc meta包
 )
 

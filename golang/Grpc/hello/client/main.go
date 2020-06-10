@@ -24,7 +24,7 @@ func main() {
 
 func Hello(name string){
 	// 连接
-	conn, err := grpc.Dial(Address, grpc.WithInsecure())
+	conn, err := grpc.Dial(Address, grpc.WithInsecure())  // 不安全连接
 	if err != nil {
 		fmt.Println(err)
 	}
