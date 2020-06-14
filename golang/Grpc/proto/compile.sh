@@ -14,3 +14,5 @@ protoc -I . --go_out=plugins=grpc,Mgoogle/api/annotations.proto=github.com/jergo
 
 # 编译hello_http.proto gateway
 protoc --grpc-gateway_out=logtostderr=true:. hello_http/hello_http.proto
+
+

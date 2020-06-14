@@ -17,7 +17,7 @@ func main() {
 	defer cancel()
 
 	// grpc服务地址
-	endpoint := "127.0.0.1:50052"
+	endpoint := "127.0.0.1:8888"
 	mux := runtime.NewServeMux()
 	opts := []grpc.DialOption{grpc.WithInsecure()}
 

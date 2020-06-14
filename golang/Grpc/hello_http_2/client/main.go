@@ -11,7 +11,7 @@ import (
 
 const (
 	// Address gRPC服务地址
-	Address = "127.0.0.1:50052"
+	Address = "127.0.0.1:8888"
 )
 
 func main() {
@@ -43,4 +43,4 @@ func main() {
 	grpclog.Println(r.Message)
 }
 
-// OR: curl -X POST -k https://localhost:50052/example/echo -d '{"name": "gRPC-HTTP is working!"}'
+// OR: curl -X POST -k https://localhost:8888/example/echo -d '{"name": "gRPC-HTTP is working!"}'

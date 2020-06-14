@@ -1,6 +1,7 @@
 syntax = "proto3"; // 指定proto版本
 package hello;     // 指定包名
 
+// 优先使用go_package作为包名
 option go_package = "hello";
 
 // 定义Hello服务

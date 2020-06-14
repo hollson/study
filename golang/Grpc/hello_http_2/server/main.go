@@ -31,7 +31,7 @@ func (h helloHTTPService) SayHello(ctx context.Context, in *pb.HelloHTTPRequest)
 }
 
 func main() {
-	endpoint := "127.0.0.1:50052"
+	endpoint := "127.0.0.1:8888"
 	conn, err := net.Listen("tcp", endpoint)
 	if err != nil {
 		grpclog.Fatalf("TCP Listen err:%v\n", err)

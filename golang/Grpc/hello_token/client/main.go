@@ -11,7 +11,7 @@ import (
 
 const (
 	// Address gRPC服务地址
-	Address = "127.0.0.1:50052"
+	Address = "127.0.0.1:8888"
 
 	// OpenTLS 是否开启TLS认证
 	OpenTLS = true

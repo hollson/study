@@ -9,7 +9,7 @@ import (
 	"google.golang.org/grpc/grpclog"
 )
 
-const Address = "127.0.0.1:50052"
+const Address = "127.0.0.1:8888"
 
 // krəˈdenʃlz
 func main() {

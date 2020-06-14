@@ -15,7 +15,7 @@ import (
 	"google.golang.org/grpc/grpclog"
 )
 
-const Address = "127.0.0.1:50052"
+const Address = "127.0.0.1:8888"
 
 // 我实现了Proto服务端协议
 type helloService struct{}
