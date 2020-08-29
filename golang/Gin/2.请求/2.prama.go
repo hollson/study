@@ -1,14 +1,16 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 type Person struct {
-	Name  string `form:"name"`
-	Birth string `form:"birth",time_format:"2006-01-02"`
+	Name  string `form:"name" json:"name"`
+	Birth string `form:"birth",json:"birth" time_format:"2006-01-02"`
+	Age   int    `form:"age" json:"age"`
 }
 
 func main() {
@@ -27,7 +29,7 @@ func UrlParamHandler(c *gin.Context) {
 	c.String(http.StatusOK, "name=%s,sex=%s", name, sex)
 }
 
-//curl -X  GET "http://127.0.0.1:8080/param?name=hollson&sex=male"
+// curl -X  GET "http://127.0.0.1:8080/param?name=hollson&sex=male"
 
 // 2.绑定对象，json
 func BindObjHandler(c *gin.Context) {
@@ -36,15 +38,14 @@ func BindObjHandler(c *gin.Context) {
 		c.String(http.StatusBadRequest, err.Error())
 		c.Abort()
 	}
-	c.JSON(http.StatusOK, gin.H{
-		"name":  p.Name,
-		"birth": p.Birth,
-	})
+
+	c.JSON(http.StatusOK, p)
 }
 
-//curl -X GET "http://127.0.0.1:8080/obj?name=hollson&birth=1985-12-30"
-//curl -X POST "http://127.0.0.1:8080/obj" -d "name=hollson&birth=1985-12-30"
-//curl -H "Content-Type:application/json" -X POST "http://127.0.0.1:8080/obj" -d '{"name":"hollson","birth":"1988-12-01"}'
+// curl -X GET "http://127.0.0.1:8080/obj?name=hollson&birth=1985-12-30"
+// curl -X POST "http://127.0.0.1:8080/obj" -d "name=hollson&birth=1985-12-30"
+// curl -H "Content-Type:application/json" -X POST "http://127.0.0.1:8080/obj" -d '{"name":"hollson","birth":"1988-12-01"}'
+// curl -H "Content-Type:application/x-www-form-urlencoded" -X POST "http://127.0.0.1:8080/obj" -d "name=tom&birth=1988-12-01&age=22"
 
 // 3.获取Body
 func BodyHandler(c *gin.Context) {
@@ -54,12 +55,15 @@ func BodyHandler(c *gin.Context) {
 		c.String(http.StatusBadRequest, err.Error())
 		c.Abort()
 	}
-	//name := c.PostForm("name")  //已经拿不到了
+	// name := c.PostForm("name")  //已经拿不到了
 	c.String(http.StatusOK, string(bts))
 }
 
 // curl -X POST "http://127.0.0.1:8080/body" -d '{"name":"tom","birth":"1988-12-12"}'
 // curl -H "Content-Type:application/json" -X POST "http://127.0.0.1:8080/body" -d '{"name":"hollson","birth":"1988-12-01"}'
+
+
+// https://blog.csdn.net/qq_37767455/article/details/104712028
 
 // 4.Body二次绑定
 func BodyRebindHandler(c *gin.Context) {
@@ -69,7 +73,7 @@ func BodyRebindHandler(c *gin.Context) {
 		c.String(http.StatusBadRequest, err.Error())
 		c.Abort()
 	}
-	//c.Request.Body = ioutil.NopCloser(bytes.NewBuffer(bodyBytes))
+	// c.Request.Body = ioutil.NopCloser(bytes.NewBuffer(bodyBytes))
 	name := c.PostForm("name")
 	birth := c.DefaultPostForm("birth", "2000-01-01")
 	c.String(http.StatusOK, "%s，%s，%s", string(bodyBytes), name, birth)

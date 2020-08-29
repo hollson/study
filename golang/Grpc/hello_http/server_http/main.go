@@ -1,32 +1,30 @@
 package main
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
+	gw "github.com/jergoo/go-grpc-example/proto/hello_http"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/grpclog"
-
-	gw "github.com/jergoo/go-grpc-example/proto/hello_http"
 )
 
 func main() {
-	ctx := context.Background()
-	ctx, cancel := context.WithCancel(ctx)
+	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
 	// grpc服务地址
-	endpoint := "127.0.0.1:8888"
+	endpoint := "127.0.0.1:8080"
 	mux := runtime.NewServeMux()
 	opts := []grpc.DialOption{grpc.WithInsecure()}
 
 	// HTTP转grpc
 	err := gw.RegisterHelloHTTPHandlerFromEndpoint(ctx, mux, endpoint, opts)
 	if err != nil {
-		grpclog.Fatalf("Register handler err:%v\n", err)
+		log.Println("Register handler err:%v\n", err)
 	}
 
-	grpclog.Println("HTTP Listen on 8080")
-	http.ListenAndServe(":8080", mux)
+	log.Println("HTTP Listen on 8081")
+	http.ListenAndServe(":8081", mux)
 }
