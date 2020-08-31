@@ -18,13 +18,13 @@ func main() {
 	// Initialise service
 	service.Init()
 
-	// Register Handler
+	// Subscribe Handler
 	user.RegisterUserHandler(service.Server(), new(handler.User))
 
-	//// Register Struct as Subscriber
+	//// Subscribe Struct as Subscriber
 	//micro.RegisterSubscriber("com.github.hollson.srv.user", service.Server(), new(subscriber.User))
 	//
-	//// Register Function as Subscriber
+	//// Subscribe Function as Subscriber
 	//micro.RegisterSubscriber("com.github.hollson.srv.user", service.Server(), subscriber.Handler)
 
 	// Run service

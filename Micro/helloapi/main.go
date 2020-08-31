@@ -24,7 +24,7 @@ func main() {
 	)
 // curl -H "Content-Type:application/x-www-form-urlencoded" -X POST -d "name=f546e78a46284765" http://localhost:8080/Helloapi/call
 
-// Register Handler
+// Subscribe Handler
 	helloapi.RegisterHelloapiHandler(service.Server(), new(handler.Helloapi))
 
 	// Run service

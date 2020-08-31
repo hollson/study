@@ -24,7 +24,7 @@ func main() {
 		micro.WrapHandler(client.HelloWrapper(service)),
 	)
 
-	// Register Handler
+	// Subscribe Handler
 	hello.RegisterHelloHandler(service.Server(), new(handler.Hello))
 
 	// Run service

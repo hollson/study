@@ -25,7 +25,7 @@ func main() {
 
 	//curl -H "Content-Type:application/x-www-form-urlencoded" -X POST -d "name=f546e78a46284765" http://localhost:8080/user/info
 
-	// Register Handler
+	// Subscribe Handler
 	user.RegisterUserHandler(service.Server(), new(handler.User))
 
 	// Run service

@@ -22,7 +22,7 @@ func main() {
 	// HTTP转grpc
 	err := gw.RegisterHelloHTTPHandlerFromEndpoint(ctx, mux, endpoint, opts)
 	if err != nil {
-		log.Println("Register handler err:%v\n", err)
+		log.Println("Subscribe handler err:%v\n", err)
 	}
 
 	log.Println("HTTP Listen on 8081")
